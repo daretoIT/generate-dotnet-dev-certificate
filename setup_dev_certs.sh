@@ -25,7 +25,7 @@ cp ./output/localhost.pfx ~/.dotnet/custom_dev_certificate/localhost.pfx
 echo "File location: ~/.dotnet/custom_dev_certificate/localhost.pfx"
 
 
-echo -e "\n\n#### Copy following configuration to your appsettings.Development.json ####\n"
+echo -e "\n\n#### Copy following configuration to your appsettings.<environment>.json ####\n"
 IFS='' read -r -d '' CONFIG <<"EOF"
 "Kestrel": {
   "Certificates": {

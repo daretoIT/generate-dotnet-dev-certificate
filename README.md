@@ -10,11 +10,12 @@ You need to generate self-signed certificates with OpenSSL and manually configur
 To simplify the process of generating these certificates for developers this script was created.
 
 Tested with Ubuntu 20.04 and dotnet core 5.0
+Automatically adding exceptions to your browser is not covered.
 
 ## What will it do?
 1. Create a self-signed certificate
-2. Add the certificate to the Ubuntu Trust Store
-3. Copy the generated certificate to your users's home directory under '~/.dotnet/custom_dev_certificate/localhost.pfx'
+2. Add the certificate to the Ubuntu trust store
+3. Copy the generated certificate to your user's home directory under '~/.dotnet/custom_dev_certificate/localhost.pfx'
 4. Create an terminal alias to simplify the creation of a symbolic link to the certificate.
 
 ## How To
@@ -35,10 +36,10 @@ Enter Export Password:
 Verifying - Enter Export Password:
 ```
 
-You will also be asked to enter your sudo password, as adding the certificate to the Ubuntu Trust Store requires
+You will also be asked to enter your sudo password, as adding the certificate to the Ubuntu trust store requires
 elevated privileges.
 
-Go to your ASP.Net Core Application and modify the appsettings.<environment>.json file and add following part:
+Go to your ASP.Net Core Application and modify the appsettings.< environment >.json file and add following part:
 ```json
 {
   ...
@@ -53,12 +54,14 @@ Go to your ASP.Net Core Application and modify the appsettings.<environment>.jso
   ...
 }
 ```
-The script also has added an alias to your .bashrc file which allows you to create a symlink to the centrally stored
-localhost.pfx file.
+The script also has added an alias to your ~/.bashrc file which allows you to create a symlink to the centrally stored
+localhost.pfx file. ('~/.dotnet/custom_dev_certificate/localhost.pfx')
+
+
 To create a symbolic link to the localhost.pfx certificate just type 'dcc' (dotnet custom certificate) in a terminal
-within the C# project directory where your appsettings.<environment>.json is located.
+within the C# project directory where your appsettings.< environment >.json is located.
 Benefit of the symbolic link is, that it won't be added to git and therefore each developer can use his own generated
-local developer certificate.
+local developer certificate without collision, and the need to constantly trust the certificate again.
 
 ## References
 [Stack Overflow: How to run 'dotnet dev-certs https --trust'](https://stackoverflow.com/questions/55485511/how-to-run-dotnet-dev-certs-https-trust)
