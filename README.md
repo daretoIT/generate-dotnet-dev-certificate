@@ -1,2 +1,7 @@
-# generate-dotnet-dev-certifitcate
-Bash script to generate a self-signed developer certificate which is trusted by Ubuntu for ASP.Net Core development.
+# Generate Developer Certificate for ASP.Net Core on Ubuntu (20.04)
+
+## Problem
+
+## Solution
+
+## References
