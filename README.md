@@ -6,7 +6,7 @@ This works fine under Windows and Mac OS X with 'dotnet dev-certs https --trust'
 like Ubuntu 18.04 or 20.04. You will get SSL Connection errors if two Wep Apps need to communicate with each other.
 
 ## Solution
-You need to generate self-signed certificates with OpenSSL and manually configure Kestrel to use them.
+You need to generate self-signed certificates with OpenSSL to successfully use them.
 To simplify the process of generating these certificates for developers this script was created.
 
 Tested with Ubuntu 20.04 and dotnet core 5.0
@@ -15,8 +15,7 @@ Automatically adding exceptions to your browser is not covered.
 ## What will it do?
 1. Create a self-signed certificate
 2. Add the certificate to the Ubuntu trust store
-3. Copy the generated certificate to your user's home directory under '$HOME/.dotnet/custom_dev_certificate/localhost.pfx'
-4. Create an terminal alias to simplify the creation of a symbolic link to the certificate.
+3. Add the generated certificate to aspnet environment 'dotnet dev-certs https --trust'
 
 ## How To
 Clone or download this git repository and make 'setup_dev_certs.sh' executable.
