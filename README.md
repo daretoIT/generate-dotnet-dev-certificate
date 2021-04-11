@@ -54,7 +54,7 @@ Go to your ASP.Net Core Application and modify the appsettings.< environment >.j
   ...
 }
 ```
-The script also has added an alias to your ~/.bashrc file which allows you to create a symlink to the centrally stored
+The script also has added an alias to your '~/.bashrc' file which allows you to create a symlink to the centrally stored
 localhost.pfx file. ('~/.dotnet/custom_dev_certificate/localhost.pfx')
 
 
