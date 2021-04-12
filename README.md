@@ -15,7 +15,7 @@ Tested with Ubuntu 20.04 and dotnet core 5.0
 
 ## What will it do?
 1. Create a self-signed Root CA certificate.
-2. Add the certificate to the Developer Root CA Ubuntu trust store.
+2. Add the Developer Root CA certificate to the Ubuntu trust store.
 3. Add the certificate to the browser's trust store (certutil).
 4. Create a self-signed server certificate to use in dotnet development.
 5. Add the generated certificate to aspnet environment 'dotnet dev-certs https --trust' to use it **without** any custom
